@@ -18,7 +18,7 @@ const smallCardStyle = {
 class FilterCard extends Component {
   render() {
     return (
-      <React.Fragment>
+      <div style={{ position: "relative" }}>
         {this.props.isExpanded && (
           <CloseIcon position={this.props.closeIconPosition} />
         )}
@@ -29,24 +29,38 @@ class FilterCard extends Component {
         >
           {this.props.children}
         </div>
-      </React.Fragment>
+      </div>
     );
   }
 }
 
 function CloseIcon({ iconImage, bgcolor, position, isRound }) {
-  return (
-    position === "TOP_RIGHT" && (
-      <span className={`${filterStyles.closeIcon} ${filterStyles.topRight} `}>
-        <img
-          src="https://image.flaticon.com/icons/svg/463/463065.svg"
-          width="20"
-          height="20"
-          alt="close"
-        />
-      </span>
-    )
-  );
+  switch (position) {
+    case "TOP_RIGHT":
+      return (
+        <span className={`${filterStyles.closeIcon} ${filterStyles.topRight} `}>
+          <img
+            src="https://image.flaticon.com/icons/svg/463/463065.svg"
+            width="20"
+            height="20"
+            alt="close"
+          />
+        </span>
+      );
+    case "TOP_LEFT":
+      return (
+        <span className={`${filterStyles.closeIcon} ${filterStyles.topLeft} `}>
+          <img
+            src="https://image.flaticon.com/icons/svg/463/463065.svg"
+            width="20"
+            height="20"
+            alt="close"
+          />
+        </span>
+      );
+    default:
+      break;
+  }
 }
 
 /* <div

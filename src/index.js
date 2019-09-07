@@ -21,6 +21,33 @@ class App extends React.Component {
     return (
       <div>
         <FilterCard
+          closeIconPosition="TOP_LEFT"
+          expandCard={() =>
+            this.setState({ expandCard: !this.state.expandCard })
+          }
+          isExpanded={this.state.expandCard}
+        >
+          {this.state.expandCard ? (
+            <h1
+              style={{
+                width: "300px",
+                height: "190px"
+              }}
+            >
+              Open
+            </h1>
+          ) : (
+            <h1
+              style={{
+                width: "190px",
+                height: "120px"
+              }}
+            >
+              Closed
+            </h1>
+          )}
+        </FilterCard>
+        <FilterCard
           closeIconPosition="TOP_RIGHT"
           expandCard={() =>
             this.setState({ expandCard: !this.state.expandCard })
@@ -37,14 +64,14 @@ class App extends React.Component {
               Open
             </h1>
           ) : (
-            <h3
+            <h1
               style={{
                 width: "190px",
                 height: "120px"
               }}
             >
-              Filter Card is Closed
-            </h3>
+              Closed
+            </h1>
           )}
         </FilterCard>
         {/* <FilterCard background="red" border="3px solid green">
