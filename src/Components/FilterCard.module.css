@@ -6,17 +6,22 @@
   cursor: pointer;
 }
 .topRight {
-  top: 0px;
-  left: 290px;
+  top: -10px;
+  left: 270px;
   animation-name: topRight;
   animation-duration: 0.55s;
+}
+
+.topLeft {
+  top: -25px;
+  left: -13px;
 }
 @keyframes topRight {
   from {
     left: 10px;
   }
   to {
-    left: 290px;
+    left: 270px;
   }
 }
 .closeIcon {
