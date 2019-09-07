@@ -1,0 +1,39 @@
+.main {
+  width: 190px;
+  height: 120px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.topRight {
+  top: 0px;
+  left: 290px;
+  animation-name: topRight;
+  animation-duration: 0.55s;
+}
+@keyframes topRight {
+  from {
+    left: 10px;
+  }
+  to {
+    left: 290px;
+  }
+}
+.closeIcon {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  background: #1cb5e0;
+  padding: 10px;
+  border-radius: 100%;
+  position: absolute;
+  cursor: pointer;
+  box-shadow: -11px 9px 25px -6px rgba(0, 0, 0, 0.75);
+}
+.transform {
+  transition: width 0.55s ease, height 0.55s ease;
+}
+
+.main:hover {
+  transform: scale(1.2);
+}
